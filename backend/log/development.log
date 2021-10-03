@@ -25,3 +25,133 @@ Migrating to CreateTasks (20211003162238)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Protect"], ["date", "09/18/2020"], ["frequency", "14 days"], ["status", "active"], ["created_at", "2021-10-03 16:23:41.995612"], ["updated_at", "2021-10-03 16:23:41.995612"]]
   [1m[36mTRANSACTION (14.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2021-10-03 09:46:33 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/alantang1369/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/alantang1369/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.7ms | Allocations: 477)
+Completed 200 OK in 62ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 4121)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 09:46:41 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 46ms (Views: 30.4ms | ActiveRecord: 4.6ms | Allocations: 5828)
+
+
+Started GET "/static/js/bundle.js" for ::1 at 2021-10-03 10:04:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/bundle.js"):
+  
+Started GET "/static/js/0.chunk.js" for ::1 at 2021-10-03 10:04:55 -0700
+Started GET "/static/js/main.chunk.js" for ::1 at 2021-10-03 10:04:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/0.chunk.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js"):
+  
+Started GET "/favicon.ico" for ::1 at 2021-10-03 10:04:55 -0700
+Started GET "/manifest.json" for ::1 at 2021-10-03 10:04:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2021-10-03 10:05:11 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/alantang1369/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/alantang1369/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.3ms | Allocations: 190)
+Completed 200 OK in 18ms (Views: 15.2ms | Allocations: 840)
+
+
+Started GET "/" for 127.0.0.1 at 2021-10-03 11:58:33 -0700
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/alantang1369/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/alantang1369/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 59.9ms | Allocations: 314)
+Completed 200 OK in 81ms (Views: 65.4ms | ActiveRecord: 0.0ms | Allocations: 2442)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-10-03 11:58:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 11:58:41 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 20.8ms | ActiveRecord: 3.0ms | Allocations: 5987)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 12:58:20 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 1.6ms | Allocations: 1626)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 13:00:56 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.4ms | Allocations: 1041)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 13:01:08 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 1022)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 13:01:08 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 1022)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 13:01:09 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 1022)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 13:01:15 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.6ms | Allocations: 1022)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 13:01:17 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 1.0ms | Allocations: 1022)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 13:01:26 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (11.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 23.6ms | ActiveRecord: 11.4ms | Allocations: 1040)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-03 13:08:50 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 1.6ms | Allocations: 1602)
+
+
