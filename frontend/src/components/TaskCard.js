@@ -23,6 +23,8 @@ const TaskCard= ({task, updateTask, deleteTask, history})=> {
             return (
                 <button className="actBttn" onClick={handleClick}>{task.name} Now</button>
             )
+        }else{
+            return(<button className="grnBttn" >On Going</button>)
         }
     }
 

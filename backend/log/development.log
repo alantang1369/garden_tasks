@@ -2152,3 +2152,148 @@ Processing by TasksController#index as */*
 Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 2328)
 
 
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:05:53 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 2328)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-06 14:07:13 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-06", "frequency"=>"1 days", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-06", "frequency"=>"1 days", "status"=>"active"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:07:13 -0700
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-06"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-06 21:07:13.975501"], ["updated_at", "2021-10-06 21:07:13.975501"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Processing by TasksController#index as */*
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 201 Created in 14ms (Views: 1.0ms | ActiveRecord: 2.0ms | Allocations: 2373)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.7ms | Allocations: 3881)
+
+
+Started PATCH "/tasks/10" for 127.0.0.1 at 2021-10-06 14:07:53 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"10", "name"=>"Water", "date"=>"2021-10-05", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T22:28:25.697Z", "updated_at"=>"2021-10-05T22:28:25.697Z", "task"=>{"id"=>"10", "name"=>"Water", "date"=>"2021-10-05", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T22:28:25.697Z", "updated_at"=>"2021-10-05T22:28:25.697Z"}}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.4ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-06 21:07:53.444615"], ["id", 10]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 2302)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:07:56 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 42ms (Views: 41.8ms | ActiveRecord: 0.1ms | Allocations: 2474)
+
+
+Started DELETE "/tasks/17" for 127.0.0.1 at 2021-10-06 14:10:57 -0700
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"17", "task"=>{}}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTask Destroy (1.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+Completed 204 No Content in 17ms (ActiveRecord: 2.9ms | Allocations: 1734)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-06 14:11:18 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 day", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 day", "status"=>"active"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-04"], ["frequency", "1 day"], ["status", "active"], ["created_at", "2021-10-06 21:11:18.918520"], ["updated_at", "2021-10-06 21:11:18.918520"]]
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:11:18 -0700
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Processing by TasksController#index as */*
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 201 Created in 16ms (Views: 2.7ms | ActiveRecord: 2.6ms | Allocations: 2974)
+
+
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 3100)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:13:43 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 2473)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:15:00 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 2473)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-06 14:19:34 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-06", "frequency"=>"1", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-06", "frequency"=>"1", "status"=>"active"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-06"], ["frequency", "1"], ["status", "active"], ["created_at", "2021-10-06 21:19:34.568075"], ["updated_at", "2021-10-06 21:19:34.568075"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 201 Created in 9ms (Views: 1.0ms | ActiveRecord: 1.6ms | Allocations: 1816)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:19:34 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 2618)
+
+
+Started PATCH "/tasks/18" for 127.0.0.1 at 2021-10-06 14:21:04 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"18", "name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 day", "status"=>"inactive", "created_at"=>"2021-10-06T21:11:18.918Z", "updated_at"=>"2021-10-06T21:11:18.918Z", "task"=>{"id"=>"18", "name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 day", "status"=>"inactive", "created_at"=>"2021-10-06T21:11:18.918Z", "updated_at"=>"2021-10-06T21:11:18.918Z"}}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.7ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-06 21:21:04.676549"], ["id", 18]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 2280)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:21:07 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 2618)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:21:13 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 2618)
+
+
