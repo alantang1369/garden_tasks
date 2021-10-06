@@ -36,3 +36,27 @@ export const addTask = (task) => {
         .then(task => dispatch({ type: 'ADD_TASK', task}))
     }
 }
+
+export const updateTask = (task) => {
+    return dispatch => {
+        fetch(`http://127.0.0.1:3001/tasks/${task.id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(task),
+            headers: { 'Content-Type': 'application/json'}
+        })
+        .then(resp => resp.json())
+        .then(task => dispatch({ type: 'UPDATE_TASK', task}))
+    }
+}
+
+export const deleteTask = (id) => {
+    
+        return dispatch => {
+            fetch(`http://127.0.0.1:3001/tasks/${id}`, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json'}
+            })
+            dispatch({type:'DELETE_TASK', id})
+        }
+    
+}

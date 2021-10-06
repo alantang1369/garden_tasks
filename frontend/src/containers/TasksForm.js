@@ -23,6 +23,7 @@ class TasksForm extends Component {
         e.preventDefault();
         console.log(this.state)
         this.props.addTask(this.state)
+        this.props.history.push("/tasks")
     }
     render() {
         return (

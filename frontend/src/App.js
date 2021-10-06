@@ -3,16 +3,25 @@ import TasksContainer from './containers/TasksContainer'
 import TasksForm from './containers/TasksForm'
 import Home from './components/Home'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-export default class App extends Component {
+import { connect } from 'react-redux'
+import PastTask from './components/PastTask'
+import Header from './components/Header'
+class App extends Component {
   render() {
+    
     return (
       <div>
         <Router>
+          <Header/>
           <Switch>
-            <Route exact path="/" component={Home}/>
+            {/* <Route path="/" component={Header}/> */}
+            <Route exact path="/home" render={(routerProps)=> <Home {...routerProps}/>}/>
+            <Route path="/exit" render={()=> <h3>Thank you for using the app!</h3>}/>
             <Route exact path="/tasks" component={TasksContainer}/>
-            <Route exact path="/tasks/new"component={TasksForm}/>
-            {/* <Route exact path="/tasks/history" coponent={TaskHistory} */}
+            <Route path="/tasks/new"component={TasksForm}/>
+            
+            <Route path="/past/:name" 
+                  render={(routerProps)=> <PastTask {...routerProps} tasks={this.props.tasks}/>}/>
 
           </Switch>
         </Router>
@@ -20,3 +29,11 @@ export default class App extends Component {
     )
   }
 }
+
+const mapStateToProps = (state)=> {
+  return {
+    tasks: state.tasks
+  }
+}
+
+export default connect(mapStateToProps)(App)

@@ -871,3 +871,840 @@ Processing by TasksController#index as */*
 Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 1.4ms | Allocations: 1602)
 
 
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 21:03:05 -0700
+Processing by TasksController#index as */*
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 5.1ms | Allocations: 1604)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 22:16:40 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 3.4ms | Allocations: 1603)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 22:19:16 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.5ms | Allocations: 1023)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-04 22:27:10 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 days", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 days", "status"=>"active"}}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTask Create (1.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-04"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-05 05:27:10.470903"], ["updated_at", "2021-10-05 05:27:10.470903"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (45.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 201 Created in 97ms (Views: 5.4ms | ActiveRecord: 49.9ms | Allocations: 4742)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (29.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTasks (20211003162238)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date" varchar, "frequency" varchar, "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211003162238"]]
+  [1m[36mTRANSACTION (23.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-10-05 05:33:18.978864"], ["updated_at", "2021-10-05 05:33:18.978864"]]
+  [1m[36mTRANSACTION (30.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2020-10-02"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-05 05:33:25.548125"], ["updated_at", "2021-10-05 05:33:25.548125"]]
+  [1m[36mTRANSACTION (693.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Feed"], ["date", "2020-09-25"], ["frequency", "7 days"], ["status", "active"], ["created_at", "2021-10-05 05:33:26.254162"], ["updated_at", "2021-10-05 05:33:26.254162"]]
+  [1m[36mTRANSACTION (29.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Protect"], ["date", "2020-09-18"], ["frequency", "14 days"], ["status", "active"], ["created_at", "2021-10-05 05:33:26.295247"], ["updated_at", "2021-10-05 05:33:26.295247"]]
+  [1m[36mTRANSACTION (16.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 22:34:00 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 51ms (Views: 33.0ms | ActiveRecord: 2.6ms | Allocations: 7951)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 22:39:40 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 1041)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 22:39:53 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 1040)
+
+
+Started PATCH "/tasks/1" for 127.0.0.1 at 2021-10-04 23:01:24 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Water", "date"=>"2020-10-02", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T05:33:25.548Z", "updated_at"=>"2021-10-05T05:33:25.548Z", "task"=>{"id"=>"1", "name"=>"Water", "date"=>"2020-10-02", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T05:33:25.548Z", "updated_at"=>"2021-10-05T05:33:25.548Z"}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.0ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-05 06:01:24.589835"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (26.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 99ms (Views: 3.6ms | ActiveRecord: 29.3ms | Allocations: 6857)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:01:53 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 1037)
+
+
+Started PATCH "/tasks/2" for 127.0.0.1 at 2021-10-04 23:02:14 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"2", "name"=>"Feed", "date"=>"2020-09-25", "frequency"=>"7 days", "status"=>"inactive", "created_at"=>"2021-10-05T05:33:26.254Z", "updated_at"=>"2021-10-05T05:33:26.254Z", "task"=>{"id"=>"2", "name"=>"Feed", "date"=>"2020-09-25", "frequency"=>"7 days", "status"=>"inactive", "created_at"=>"2021-10-05T05:33:26.254Z", "updated_at"=>"2021-10-05T05:33:26.254Z"}}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.0ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-05 06:02:14.282328"], ["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (27.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 59ms (Views: 1.1ms | ActiveRecord: 29.2ms | Allocations: 4487)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:02:19 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.6ms | Allocations: 1018)
+
+
+Started DELETE "/tasks/3" for 127.0.0.1 at 2021-10-04 23:09:51 -0700
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"3", "task"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTask Destroy (0.9ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (19.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+Completed 204 No Content in 49ms (ActiveRecord: 21.9ms | Allocations: 4391)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:09:55 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.7ms | Allocations: 892)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-04 23:10:28 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Protect", "date"=>"2021-10-04", "frequency"=>"14 days", "status"=>"", "task"=>{"name"=>"Protect", "date"=>"2021-10-04", "frequency"=>"14 days", "status"=>""}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTask Create (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Protect"], ["date", "2021-10-04"], ["frequency", "14 days"], ["status", ""], ["created_at", "2021-10-05 06:10:28.764798"], ["updated_at", "2021-10-05 06:10:28.764798"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (21.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 201 Created in 52ms (Views: 2.3ms | ActiveRecord: 23.0ms | Allocations: 4139)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:10:48 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.5ms | Allocations: 1018)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:10:58 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 1023)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-04 23:32:22 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 days", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 days", "status"=>"active"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-04"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-05 06:32:22.052564"], ["updated_at", "2021-10-05 06:32:22.052564"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (88.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 201 Created in 117ms (Views: 1.5ms | ActiveRecord: 90.3ms | Allocations: 4474)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:33:23 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (8.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 6.1ms | ActiveRecord: 8.4ms | Allocations: 1188)
+
+
+Started DELETE "/tasks/5" for 127.0.0.1 at 2021-10-04 23:33:28 -0700
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"5", "task"=>{}}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTask Destroy (1.0ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+Completed 204 No Content in 52ms (ActiveRecord: 25.3ms | Allocations: 3920)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-04 23:33:43 -0700
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:33:43 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 days", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 days", "status"=>"active"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Processing by TasksController#index as */*
+  [1m[36mTask Create (1.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-04"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-05 06:33:43.484133"], ["updated_at", "2021-10-05 06:33:43.484133"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTRANSACTION (29.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 201 Created in 74ms (Views: 1.7ms | ActiveRecord: 30.6ms | Allocations: 5349)
+
+
+Completed 200 OK in 64ms (Views: 57.7ms | ActiveRecord: 2.7ms | Allocations: 4164)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-04 23:34:25 -0700
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:34:25 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"active"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Processing by TasksController#index as */*
+  [1m[36mTask Create (1.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-03"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-05 06:34:25.619705"], ["updated_at", "2021-10-05 06:34:25.619705"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTRANSACTION (28.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.3ms | Allocations: 3412)
+
+
+Completed 201 Created in 69ms (Views: 1.5ms | ActiveRecord: 29.8ms | Allocations: 5392)
+
+
+Started PATCH "/tasks/7" for 127.0.0.1 at 2021-10-04 23:34:36 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"7", "name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T06:34:25.619Z", "updated_at"=>"2021-10-05T06:34:25.619Z", "task"=>{"id"=>"7", "name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T06:34:25.619Z", "updated_at"=>"2021-10-05T06:34:25.619Z"}}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-05 06:34:37.015736"], ["id", 7]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (35.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 74ms (Views: 1.0ms | ActiveRecord: 37.0ms | Allocations: 4487)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:36:58 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 1313)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:37:13 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 1313)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-04 23:37:42 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"active"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:37:42 -0700
+  [1m[36mTask Create (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-03"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-05 06:37:42.564161"], ["updated_at", "2021-10-05 06:37:42.564161"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Processing by TasksController#index as */*
+  [1m[36mTRANSACTION (20.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 201 Created in 55ms (Views: 1.1ms | ActiveRecord: 21.4ms | Allocations: 4959)
+
+
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.5ms | Allocations: 3409)
+
+
+Started PATCH "/tasks/8" for 127.0.0.1 at 2021-10-04 23:37:44 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"8", "name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T06:37:42.564Z", "updated_at"=>"2021-10-05T06:37:42.564Z", "task"=>{"id"=>"8", "name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T06:37:42.564Z", "updated_at"=>"2021-10-05T06:37:42.564Z"}}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-05 06:37:44.847372"], ["id", 8]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (36.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 68ms (Views: 0.9ms | ActiveRecord: 38.2ms | Allocations: 4464)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:39:01 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 1458)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:39:02 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 56ms (Views: 55.0ms | ActiveRecord: 0.5ms | Allocations: 1459)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:39:19 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.4ms | Allocations: 1458)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:39:20 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.4ms | Allocations: 1458)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-04 23:41:09 -0700
+Started GET "/tasks" for 127.0.0.1 at 2021-10-04 23:41:09 -0700
+Processing by TasksController#create as */*
+Processing by TasksController#index as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"active"}}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.5ms | Allocations: 2268)
+
+
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-03"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-05 06:41:09.198955"], ["updated_at", "2021-10-05 06:41:09.198955"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (22.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 201 Created in 58ms (Views: 1.6ms | ActiveRecord: 23.6ms | Allocations: 5553)
+
+
+Started PATCH "/tasks/9" for 127.0.0.1 at 2021-10-04 23:41:12 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"9", "name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T06:41:09.198Z", "updated_at"=>"2021-10-05T06:41:09.198Z", "task"=>{"id"=>"9", "name"=>"Water", "date"=>"2021-10-03", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T06:41:09.198Z", "updated_at"=>"2021-10-05T06:41:09.198Z"}}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.0ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-05 06:41:12.836740"], ["id", 9]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (29.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 58ms (Views: 0.8ms | ActiveRecord: 30.7ms | Allocations: 4464)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 14:06:20 -0700
+Processing by TasksController#index as */*
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 4.8ms | Allocations: 2183)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 14:10:42 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.5ms | Allocations: 1603)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 14:50:02 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 2.1ms | Allocations: 2184)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:13:55 -0700
+Processing by TasksController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 1.9ms | Allocations: 2179)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:19:52 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 3.1ms | Allocations: 2183)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:28:05 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 1.6ms | Allocations: 2183)
+
+
+Started PATCH "/tasks/6" for 127.0.0.1 at 2021-10-05 15:28:12 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"6", "name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T06:33:43.484Z", "updated_at"=>"2021-10-05T06:33:43.484Z", "task"=>{"id"=>"6", "name"=>"Water", "date"=>"2021-10-04", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-05T06:33:43.484Z", "updated_at"=>"2021-10-05T06:33:43.484Z"}}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.8ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-05 22:28:12.230928"], ["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 69ms (Views: 1.1ms | ActiveRecord: 15.3ms | Allocations: 4484)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:28:25 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 1603)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-05 15:28:25 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Water", "date"=>"2021-10-05", "frequency"=>"1 days", "status"=>"active", "task"=>{"name"=>"Water", "date"=>"2021-10-05", "frequency"=>"1 days", "status"=>"active"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2021-10-05"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-05 22:28:25.697963"], ["updated_at", "2021-10-05 22:28:25.697963"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Completed 201 Created in 44ms (Views: 1.6ms | ActiveRecord: 14.6ms | Allocations: 4018)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:29:05 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.6ms | Allocations: 1744)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:43:11 -0700
+Processing by TasksController#index as */*
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 8.5ms | Allocations: 2328)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:47:43 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 17.6ms | ActiveRecord: 1.9ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:47:46 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.6ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:47:53 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:48:06 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.8ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:48:53 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.8ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:48:54 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:50:49 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.6ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:51:32 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:51:48 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 1.0ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:52:25 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:52:27 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:52:29 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.6ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:52:32 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:53:01 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.4ms | Allocations: 1749)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:54:22 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:54:27 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 15:54:34 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:32:04 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 1.5ms | Allocations: 2328)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:32:39 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:32:49 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (3.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 3.1ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:33:00 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:33:22 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.6ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:37:09 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:44:44 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 4.0ms | Allocations: 2328)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:44:54 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:45:36 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.7ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:45:39 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.8ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:45:43 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.4ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:45:45 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:45:56 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:03 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:07 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.5ms | Allocations: 1749)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:09 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 1.9ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:11 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.6ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:12 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:15 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:24 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:27 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:28 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.6ms | Allocations: 1749)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:32 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:45 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:52 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:54 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.4ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:56 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:46:58 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.4ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 16:47:06 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.4ms | Allocations: 1748)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 17:28:56 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 2.0ms | Allocations: 2328)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-05 17:29:21 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 1748)
+
+

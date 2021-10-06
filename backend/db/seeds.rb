@@ -5,6 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Task.create(name: 'Water', date: '10/02/2020', frequency: '1 days', status: 'active')
-Task.create(name: 'Feed', date: '09/25/2020', frequency: '7 days', status: 'active')
-Task.create(name: 'Protect', date: '09/18/2020', frequency: '14 days', status: 'active')
+Task.create(name: 'Water', date: '2020-10-02', frequency: '1 days', status: 'active')
+Task.create(name: 'Feed', date: '2020-09-25', frequency: '7 days', status: 'active')
+Task.create(name: 'Protect', date: '2020-09-18', frequency: '14 days', status: 'active')
