@@ -44,7 +44,7 @@ const TaskCard= ({task, updateTask, deleteTask, history})=> {
             <h3>{task.name}</h3>
             <p>Date: {task.date}</p>
             <p>Status: {task.status}</p>
-            <p>Frequency: {task.frequency} </p>
+            <p>Frequency: {task.frequency} day(s) </p>
             {actionButton()}<br/>
             <Link to={`/past/${task.name.toLowerCase()}`}>See Past Events</Link>
         </div>
