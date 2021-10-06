@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div className="App-header">
             <div id="home-bar">
-                <Link to="/home">
+                <Link to="/">
                     <h3>Home</h3>
                 </Link>
             </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const PastTask = ({match, tasks}) => {
     const filteredList = tasks.filter(task => task.name.toLowerCase() === match.params.name)

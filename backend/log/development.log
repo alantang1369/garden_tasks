@@ -2003,3 +2003,152 @@ Processing by TasksController#index as */*
 Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.6ms | Allocations: 2038)
 
 
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water"], ["date", "2020-10-02"], ["frequency", "1 days"], ["status", "active"], ["created_at", "2021-10-06 20:36:53.545396"], ["updated_at", "2021-10-06 20:36:53.545396"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Feed"], ["date", "2020-09-25"], ["frequency", "7 days"], ["status", "active"], ["created_at", "2021-10-06 20:36:53.549687"], ["updated_at", "2021-10-06 20:36:53.549687"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Protect"], ["date", "2020-09-18"], ["frequency", "14 days"], ["status", "active"], ["created_at", "2021-10-06 20:36:53.552577"], ["updated_at", "2021-10-06 20:36:53.552577"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/tasks" for ::1 at 2021-10-06 13:37:08 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 0.7ms | Allocations: 10501)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 13:39:30 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.6ms | Allocations: 2492)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 13:46:59 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 1.6ms | Allocations: 3076)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 13:47:07 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 2491)
+
+
+Started DELETE "/tasks/11" for 127.0.0.1 at 2021-10-06 13:47:55 -0700
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"11", "task"=>{}}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTask Destroy (1.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+Completed 204 No Content in 23ms (ActiveRecord: 2.7ms | Allocations: 3604)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2021-10-06 13:48:22 -0700
+Processing by TasksController#create as */*
+  Parameters: {"name"=>"Protect", "date"=>"2021-10-05", "frequency"=>"14 days", "status"=>"active", "task"=>{"name"=>"Protect", "date"=>"2021-10-05", "frequency"=>"14 days", "status"=>"active"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "date", "frequency", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Protect"], ["date", "2021-10-05"], ["frequency", "14 days"], ["status", "active"], ["created_at", "2021-10-06 20:48:22.159439"], ["updated_at", "2021-10-06 20:48:22.159439"]]
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:20:in `create'
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 13:48:22 -0700
+Completed 201 Created in 12ms (Views: 1.4ms | ActiveRecord: 4.6ms | Allocations: 2288)
+
+
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 2475)
+
+
+Started PATCH "/tasks/13" for 127.0.0.1 at 2021-10-06 13:51:53 -0700
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"13", "name"=>"Water", "date"=>"2020-10-02", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-06T20:36:53.545Z", "updated_at"=>"2021-10-06T20:36:53.545Z", "task"=>{"id"=>"13", "name"=>"Water", "date"=>"2020-10-02", "frequency"=>"1 days", "status"=>"inactive", "created_at"=>"2021-10-06T20:36:53.545Z", "updated_at"=>"2021-10-06T20:36:53.545Z"}}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2021-10-06 20:51:53.548799"], ["id", 13]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Completed 200 OK in 19ms (Views: 1.3ms | ActiveRecord: 3.4ms | Allocations: 2322)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 13:51:56 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 2473)
+
+
+Started DELETE "/tasks/16" for 127.0.0.1 at 2021-10-06 13:52:37 -0700
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"16", "task"=>{}}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTask Destroy (0.8ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 1.9ms | Allocations: 1735)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 13:58:42 -0700
+Processing by TasksController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.8ms | Allocations: 2910)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2021-10-06 14:03:21 -0700
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 2328)
+
+

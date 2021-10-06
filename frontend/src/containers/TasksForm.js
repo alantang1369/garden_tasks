@@ -31,6 +31,7 @@ class TasksForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label id="name">Name: </label>
                     <input 
+                        required
                         type="text"
                         name="name"
                         id="name"
@@ -39,6 +40,7 @@ class TasksForm extends Component {
                     /><br/>
                     <label id="date">Date: </label>
                     <input 
+                        required
                         type="date"
                         name="date"
                         id="date"
@@ -50,6 +52,7 @@ class TasksForm extends Component {
                         type="text"
                         name="frequency"
                         id="frequency"
+                        placeholder="# of days"
                         onChange={this.handleChange}
                         value={this.state.frequency}
                     /><br/>

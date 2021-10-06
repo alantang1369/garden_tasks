@@ -15,7 +15,7 @@ class App extends Component {
         <Router>
           <Header/>
           <Switch>
-            <Route exact path="/home" render={(routerProps)=> <Home {...routerProps}/>}/>
+            <Route exact path="/" render={(routerProps)=> <Home {...routerProps}/>}/>
             <Route path="/exit" render={()=> <h3>Thank you for using the app!</h3>}/>
             <Route exact path="/tasks" component={TasksContainer}/>
             <Route path="/tasks/new"component={TasksForm}/>
