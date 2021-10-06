@@ -27,7 +27,7 @@ class TasksForm extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="add-task-form">
                 <form onSubmit={this.handleSubmit}>
                     <label id="name">Name: </label>
                     <input 

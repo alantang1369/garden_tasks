@@ -37,13 +37,13 @@ const TaskCard= ({task, updateTask, deleteTask, history})=> {
     }
 
     return (
-        <div>
+        <div className="task-card">
+            <button className="delbttn" onClick={handleDelete}>X</button>
             <h3>{task.name}</h3>
             <p>Date: {task.date}</p>
             <p>Status: {task.status}</p>
-            {actionButton()}
+            {actionButton()}<br/>
             <Link to={`/past/${task.name.toLowerCase()}`}>See Past Events</Link>
-            <button className="delbttn" onClick={handleDelete}>X</button>
         </div>
     )
 }
